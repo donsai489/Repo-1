@@ -1,0 +1,40 @@
+#!/usr/bin/python
+
+def nextMove(n,grid):
+    a=[]
+    b = []
+
+
+    for i in range(n):
+        for j in range(n):
+            if(grid[i][j]=="m"):
+                a.append(i)
+                a.append(j)
+            if (grid[i][j] == 'p'):
+                b.append(i)
+                b.append(j)
+    print(a,b)
+    while (a[0] != b[0] or a[1] != b[1]):
+        if (a[0] < b[0]):
+            print("DOWN")
+            a[0] +=1
+
+        elif (a[0] > b[0]):
+            print("UP")
+            a[0] -= 1
+
+        if (a[1] < b[1]):
+            print("RIGHT")
+            a[1] += 1
+
+        elif(a[1]>b[1]):
+            print("LEFT")
+            a[1] -= 1
+
+
+m = int(input())
+
+grid = []
+for i in range(m):
+    grid.append(list(input().strip()))
+nextMove(m,grid)
